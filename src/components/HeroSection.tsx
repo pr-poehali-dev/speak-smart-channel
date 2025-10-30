@@ -34,11 +34,12 @@ const HeroSection = () => {
               </Button>
             </div>
           </div>
-          <div className="animate-scale-in">
+          <div className="animate-scale-in relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl blur-3xl opacity-50"></div>
             <img 
-              src="https://cdn.poehali.dev/projects/5cf0a34e-c438-4648-bc66-4daf7421abec/files/fd279c4b-749b-407c-8b21-1e6d163391f4.jpg"
-              alt="Neural Learning"
-              className="rounded-2xl shadow-2xl"
+              src="https://cdn.poehali.dev/files/17cf8bf5-0b88-41c1-9252-55e94292873f.jpg"
+              alt="Speak Smart Logo"
+              className="rounded-2xl shadow-2xl relative z-10 w-full"
             />
           </div>
         </div>

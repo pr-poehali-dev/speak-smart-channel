@@ -3,13 +3,15 @@ import Icon from "@/components/ui/icon";
 
 const Navigation = () => {
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-purple-100">
-      <div className="container mx-auto px-4 py-4">
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-purple-100 shadow-sm">
+      <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-              <Icon name="Brain" className="text-white" size={24} />
-            </div>
+          <div className="flex items-center gap-3">
+            <img 
+              src="https://cdn.poehali.dev/files/17cf8bf5-0b88-41c1-9252-55e94292873f.jpg" 
+              alt="Speak Smart Logo" 
+              className="w-12 h-12 object-contain"
+            />
             <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Speak Smart
             </span>

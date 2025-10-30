@@ -8,10 +8,12 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <Icon name="Brain" className="text-white" size={24} />
-              </div>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="https://cdn.poehali.dev/files/17cf8bf5-0b88-41c1-9252-55e94292873f.jpg" 
+                alt="Speak Smart Logo" 
+                className="w-12 h-12 object-contain bg-white/10 rounded-lg p-1"
+              />
               <span className="text-xl font-bold">Speak Smart</span>
             </div>
             <p className="text-white/70">
