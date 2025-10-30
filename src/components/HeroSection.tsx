@@ -9,11 +9,6 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-purple-100/80 via-lavender-50/60 to-purple-200/80" />
       
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 border-4 border-primary rounded-full"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 border-4 border-secondary rounded-full"></div>
-        <div className="absolute bottom-20 left-1/4 w-40 h-40 border-4 border-primary/50 rounded-full"></div>
-        <div className="absolute top-1/3 right-1/3 w-20 h-20 border-4 border-secondary/50 rounded-full"></div>
-        
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -23,11 +18,9 @@ const HeroSection = () => {
           <rect width="100%" height="100%" fill="url(#grid)" />
         </svg>
         
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96">
-          <div className="absolute inset-0 border-4 border-primary/30 rounded-full animate-pulse"></div>
-          <div className="absolute inset-8 border-4 border-secondary/30 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-          <div className="absolute inset-16 border-4 border-primary/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-        </div>
+        <div className="absolute top-20 left-20 w-64 h-1 bg-gradient-to-r from-primary/30 to-transparent"></div>
+        <div className="absolute top-40 right-32 w-48 h-1 bg-gradient-to-l from-secondary/30 to-transparent"></div>
+        <div className="absolute bottom-32 left-1/4 w-56 h-1 bg-gradient-to-r from-primary/20 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">

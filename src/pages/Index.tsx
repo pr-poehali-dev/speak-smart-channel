@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
+import AIToolsSection from "@/components/AIToolsSection";
 import CoursesSection from "@/components/CoursesSection";
 import MaterialsSection from "@/components/MaterialsSection";
 import MethodologySection from "@/components/MethodologySection";
@@ -13,6 +14,7 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-white via-purple-50/30 to-lavender-100/40">
       <Navigation />
       <HeroSection />
+      <AIToolsSection />
       <CoursesSection />
       <MaterialsSection />
       <MethodologySection />

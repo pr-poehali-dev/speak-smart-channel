@@ -17,11 +17,11 @@ const Navigation = () => {
             </span>
           </div>
           <div className="hidden md:flex items-center gap-6">
-            <a href="#materials" className="text-foreground/70 hover:text-primary transition-colors">Материалы</a>
+            <a href="#ai-tools" className="text-foreground/70 hover:text-primary transition-colors font-medium">ИИ-инструменты</a>
             <a href="#courses" className="text-foreground/70 hover:text-primary transition-colors">Курсы</a>
+            <a href="#materials" className="text-foreground/70 hover:text-primary transition-colors">Материалы</a>
             <a href="#methodology" className="text-foreground/70 hover:text-primary transition-colors">Методика</a>
             <a href="#reviews" className="text-foreground/70 hover:text-primary transition-colors">Отзывы</a>
-            <a href="#blog" className="text-foreground/70 hover:text-primary transition-colors">Блог</a>
             <a href="#contacts" className="text-foreground/70 hover:text-primary transition-colors">Контакты</a>
           </div>
           <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
