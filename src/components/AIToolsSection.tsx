@@ -49,6 +49,55 @@ const AIToolsSection = () => {
     }
   ];
 
+  const pricingPlans = [
+    {
+      name: "Базовый",
+      price: "1 990",
+      period: "месяц",
+      description: "Для начинающих",
+      features: [
+        "ИИ-репетитор (50 диалогов/мес)",
+        "Анализ произношения",
+        "Генератор упражнений",
+        "Базовая статистика"
+      ],
+      icon: "Sparkle",
+      popular: false
+    },
+    {
+      name: "Продвинутый",
+      price: "3 490",
+      period: "месяц",
+      description: "Самый популярный",
+      features: [
+        "ИИ-репетитор (безлимит)",
+        "Анализ произношения (расширенный)",
+        "Генератор упражнений",
+        "Умный переводчик",
+        "Интервальное повторение",
+        "Детальная аналитика"
+      ],
+      icon: "Zap",
+      popular: true
+    },
+    {
+      name: "Премиум",
+      price: "5 990",
+      period: "месяц",
+      description: "Максимум возможностей",
+      features: [
+        "Все инструменты безлимитно",
+        "ИИ-наставник с личным планом",
+        "Приоритетная поддержка",
+        "Эксклюзивные материалы",
+        "Групповые занятия онлайн",
+        "Сертификат о прохождении"
+      ],
+      icon: "Crown",
+      popular: false
+    }
+  ];
+
   return (
     <section id="ai-tools" className="py-20 bg-gradient-to-br from-slate-50 via-purple-50/30 to-slate-50 relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
@@ -74,7 +123,7 @@ const AIToolsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {tools.map((tool, idx) => (
             <Card 
               key={idx} 
@@ -109,18 +158,88 @@ const AIToolsSection = () => {
           ))}
         </div>
 
+        <div className="text-center mb-12">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">Тарифы на ИИ-инструменты</h3>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Выберите подходящий план и начните обучение с искусственным интеллектом
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {pricingPlans.map((plan, idx) => (
+            <Card 
+              key={idx}
+              className={`relative hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${
+                plan.popular ? 'border-primary border-2 shadow-xl scale-105' : 'border-2'
+              }`}
+              style={{ animationDelay: `${idx * 0.1}s` }}
+            >
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                  <Badge className="bg-gradient-to-r from-primary to-secondary text-white px-4 py-1 shadow-lg">
+                    Популярный
+                  </Badge>
+                </div>
+              )}
+              
+              <CardHeader className="text-center pb-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Icon name={plan.icon as any} className="text-white" size={32} />
+                </div>
+                <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
+                <CardDescription className="text-sm mb-4">{plan.description}</CardDescription>
+                <div className="mt-4">
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-5xl font-bold text-primary">{plan.price}</span>
+                    <span className="text-xl text-muted-foreground">₽</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-1">/ {plan.period}</p>
+                </div>
+              </CardHeader>
+
+              <CardContent className="space-y-4">
+                <ul className="space-y-3">
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={20} />
+                      <span className="text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <Button 
+                  className={`w-full ${
+                    plan.popular 
+                      ? 'bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white' 
+                      : 'bg-primary/10 text-primary hover:bg-primary/20'
+                  }`}
+                  size="lg"
+                >
+                  {plan.popular ? 'Начать сейчас' : 'Выбрать план'}
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
         <div className="bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-2xl p-8 md:p-12 text-center backdrop-blur-sm border border-primary/20">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Icon name="Zap" className="text-primary" size={32} />
-            <h3 className="text-2xl md:text-3xl font-bold">Все ИИ-инструменты включены</h3>
+            <Icon name="Gift" className="text-primary" size={32} />
+            <h3 className="text-2xl md:text-3xl font-bold">Пробный период бесплатно</h3>
           </div>
           <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Получите доступ ко всем технологиям искусственного интеллекта при покупке любого курса
+            Попробуйте любой тариф бесплатно в течение 7 дней. Без привязки карты!
           </p>
-          <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white shadow-lg">
-            <Icon name="Rocket" className="mr-2" size={20} />
-            Начать обучение с ИИ
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white shadow-lg">
+              <Icon name="Rocket" className="mr-2" size={20} />
+              Начать бесплатно
+            </Button>
+            <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary/10">
+              <Icon name="HelpCircle" className="mr-2" size={20} />
+              Сравнить тарифы
+            </Button>
+          </div>
         </div>
       </div>
     </section>
